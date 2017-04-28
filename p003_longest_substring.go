@@ -1,29 +1,33 @@
 package goleetcode
 
 func lengthOfLongestSubstring(s string) int {
-	m := make(map[byte]int)
-	maxsublen := 0
-	sublen := 0
+	l := len(s)
+	if l == 0 || l == 1 {
+		return l
+	}
 
-	for i := 0; i < len(s); i++ {
-		val := s[i]
-		if last_i, exist := m[val]; exist {
-			if sublen > maxsublen {
-				maxsublen = sublen
-			}
-			for j := i - sublen; j < last_i; j++ {
-				delete(m, s[j])
-			}
-			m[val] = i
-			sublen = i - last_i
-			continue
+	m := [128]int{}
+	res, tmp := 0, 0
+	last_idx := 0
+	for i := 0; i < l; i++ {
+		c := s[i]
+		idx := max(m[c], last_idx)
+		if idx != 0 {
+			tmp = i + 1 - idx
+			last_idx = idx
+		} else {
+			tmp++
 		}
 
-		m[val] = i
-		sublen += 1
+		res = max(res, tmp)
+		m[c] = i + 1
 	}
-	if sublen > maxsublen {
-		maxsublen = sublen
+	return res
+}
+
+func max(a, b int) int{
+	if a > b {
+		return a
 	}
-	return maxsublen
+	return b
 }

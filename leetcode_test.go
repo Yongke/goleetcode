@@ -41,9 +41,11 @@ func NodeListToSlice(node *ListNode) []int {
 }
 
 func TestP003(t *testing.T) {
+	assert.Equal(t, lengthOfLongestSubstring(""), 0)
+	assert.Equal(t, lengthOfLongestSubstring("a"), 1)
 	assert.Equal(t, lengthOfLongestSubstring("abcabcbb"), 3)
-	assert.Equal(t, lengthOfLongestSubstring("bbbb"), 1)
+	assert.Equal(t, lengthOfLongestSubstring("abba"), 2)
 	assert.Equal(t, lengthOfLongestSubstring("pwwkew"), 3)
 	assert.Equal(t, lengthOfLongestSubstring("bpfbhmipx"), 7)
-
+	assert.Equal(t, lengthOfLongestSubstring("tmmzuxt"), 5)
 }
