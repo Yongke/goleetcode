@@ -11,11 +11,10 @@ func lengthOfLongestSubstring(s string) int {
 			if sublen > maxsublen {
 				maxsublen = sublen
 			}
-
-			m = make(map[byte]int)
-			for j := last_i + 1; j <= i; j++ {
-				m[s[j]] = j
+			for j := i - sublen; j < last_i; j++ {
+				delete(m, s[j])
 			}
+			m[val] = i
 			sublen = i - last_i
 			continue
 		}
