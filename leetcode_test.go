@@ -49,3 +49,10 @@ func TestP003(t *testing.T) {
 	assert.Equal(t, lengthOfLongestSubstring("bpfbhmipx"), 7)
 	assert.Equal(t, lengthOfLongestSubstring("tmmzuxt"), 5)
 }
+
+func TestP007(t *testing.T) {
+	assert.Equal(t, reverse(123), 321)
+	assert.Equal(t, reverse(-123), -321)
+	assert.Equal(t, reverse(-1534236469), 0)
+	assert.Equal(t, reverse(1534236469), 0)
+}
