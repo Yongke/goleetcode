@@ -1,8 +1,8 @@
 package goleetcode
 
 import (
-	"math"
 	"strings"
+	"math"
 )
 
 const (
@@ -13,11 +13,12 @@ const (
 )
 
 func myAtoi(str string) int {
-	str = strings.TrimSpace(str)
+	str = strings.TrimLeft(str, " ")
 	l := len(str)
-	is_neg := false
-	var t uint64
+	var sign int64
+	var t,x int64
 	t = 0
+	sign = 1
 
 	for i := 0; i < l; i++ {
 		b := str[i]
@@ -25,21 +26,23 @@ func myAtoi(str string) int {
 			if b == s_add {
 				continue
 			}
-			is_neg = true
+			sign = -1
 			continue
 		}
 		if !is_num(b) {
-			return simple_ret(is_neg, t)
+			return int(x)
 		}
-		t = t*10 + uint64(b) - zero
-		if is_neg && t > math.MaxInt32 + 1 {
+		t = t*10 + int64(b) - zero
+		x = sign * t
+		if x < math.MinInt32 {
 			return math.MinInt32
 		}
-		if !is_neg &&  t > math.MaxInt32 {
+		if x > math.MaxInt32 {
 			return math.MaxInt32
 		}
 	}
-	return simple_ret(is_neg, t)
+
+	return int(x)
 }
 
 func is_sign(b byte) bool {
@@ -48,12 +51,4 @@ func is_sign(b byte) bool {
 
 func is_num(b byte) bool {
 	return b >= zero && b <= nine
-}
-
-func simple_ret(is_neg bool, t uint64) int {
-	if is_neg {
-		return -int(t)
-	}
-
-	return int(t)
 }
