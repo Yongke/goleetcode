@@ -34,7 +34,7 @@ func reverse_aux(x uint64) uint64 {
 	t = x
 	for t >= 10 {
 		q = t / 10
-		r = r*10 + t-q*10
+		r = r*10 + t - q*10
 		t = q
 	}
 	r = r*10 + t

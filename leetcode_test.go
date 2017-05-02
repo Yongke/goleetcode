@@ -63,3 +63,11 @@ func TestP008(t *testing.T) {
 	assert.Equal(t, myAtoi("-123"), -123)
 	assert.Equal(t, myAtoi("9223372036854775809"), 2147483647)
 }
+
+func TestP009(t *testing.T) {
+	assert.Equal(t, isPalindrome(0), true)
+	assert.Equal(t, isPalindrome(-1), false)
+	assert.Equal(t, isPalindrome(12344321), true)
+	assert.Equal(t, isPalindrome(123454321), true)
+	assert.Equal(t, isPalindrome(1233210), false)
+}
