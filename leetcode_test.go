@@ -56,3 +56,10 @@ func TestP007(t *testing.T) {
 	assert.Equal(t, reverse(-1534236469), 0)
 	assert.Equal(t, reverse(1534236469), 0)
 }
+
+func TestP008(t *testing.T) {
+	assert.Equal(t, myAtoi("123"), 123)
+	assert.Equal(t, myAtoi("+0123"), 123)
+	assert.Equal(t, myAtoi("-123"), -123)
+	assert.Equal(t, myAtoi("9223372036854775809"), 2147483647)
+}
