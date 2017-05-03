@@ -73,10 +73,17 @@ func TestP009(t *testing.T) {
 }
 
 func TestP561(t *testing.T) {
-	assert.Equal(t, arrayPairSum([]int{1,4,3,2}), 4)
+	assert.Equal(t, arrayPairSum([]int{1, 4, 3, 2}), 4)
 }
 
 func TestP461(t *testing.T) {
-	assert.Equal(t, hammingDistance(1,4), 2)
-	assert.Equal(t, hammingDistance(0,15), 4)
+	assert.Equal(t, hammingDistance(1, 4), 2)
+	assert.Equal(t, hammingDistance(0, 15), 4)
+}
+
+func TestP566(t *testing.T) {
+	matrix1 := [][]int{{1, 2}, {3, 4}}
+	assert.Equal(t, matrixReshape(matrix1, 1, 4), [][]int{{1, 2, 3, 4}})
+	assert.Equal(t, matrixReshape(matrix1, 4, 1), [][]int{{1}, {2}, {3}, {4}})
+	assert.Equal(t, matrixReshape(matrix1, 4, 2), matrix1)
 }
