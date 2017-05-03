@@ -86,6 +86,10 @@ func TestP541(t *testing.T) {
 	assert.Equal(t, reverseStr("abcabcab", 3), "cbaabcba")
 }
 
+func TestP557(t *testing.T) {
+	assert.Equal(t, reverseWords("Let's take LeetCode contest"), "s'teL ekat edoCteeL tsetnoc")
+}
+
 func TestP561(t *testing.T) {
 	assert.Equal(t, arrayPairSum([]int{1, 4, 3, 2}), 4)
 }
