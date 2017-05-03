@@ -1,10 +1,10 @@
 package goleetcode
 
 func reverseString(s string) string {
-	l := len(s)
-	bs := make([]byte,l)
-	for i := l-1; i >= 0; i-- {
-		bs[l-1-i] = s[i]
+	length := len(s)
+	bs := []byte(s)
+	for i, j := length-1, 0; j < i; i, j = i-1, j+1 {
+		bs[j],bs[i] = s[i],s[j]
 	}
 	return string(bs)
 }
