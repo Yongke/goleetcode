@@ -75,3 +75,8 @@ func TestP009(t *testing.T) {
 func TestP561(t *testing.T) {
 	assert.Equal(t, arrayPairSum([]int{1,4,3,2}), 4)
 }
+
+func TestP461(t *testing.T) {
+	assert.Equal(t, hammingDistance(1,4), 2)
+	assert.Equal(t, hammingDistance(0,15), 4)
+}
