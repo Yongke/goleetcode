@@ -81,6 +81,11 @@ func TestP461(t *testing.T) {
 	assert.Equal(t, hammingDistance(0, 15), 4)
 }
 
+func TestP541(t *testing.T) {
+	assert.Equal(t, reverseStr("abcdefg", 2), "bacdfeg")
+	assert.Equal(t, reverseStr("abcabcab", 3), "cbaabcba")
+}
+
 func TestP561(t *testing.T) {
 	assert.Equal(t, arrayPairSum([]int{1, 4, 3, 2}), 4)
 }
