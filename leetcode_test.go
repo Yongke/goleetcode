@@ -71,3 +71,7 @@ func TestP009(t *testing.T) {
 	assert.Equal(t, isPalindrome(123454321), true)
 	assert.Equal(t, isPalindrome(1233210), false)
 }
+
+func TestP561(t *testing.T) {
+	assert.Equal(t, arrayPairSum([]int{1,4,3,2}), 4)
+}
