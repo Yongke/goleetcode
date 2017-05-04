@@ -58,7 +58,6 @@ func intToRomanAux(num int) []string {
 		t := num / 10
 		return append(intToRomanAux(num-t*10), strings.Repeat("X", t))
 
-	} else {
-		return []string{m[num]}
 	}
+	return []string{m[num]}
 }
