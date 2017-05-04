@@ -72,6 +72,13 @@ func TestP009(t *testing.T) {
 	assert.Equal(t, isPalindrome(1233210), false)
 }
 
+func TestP012(t *testing.T) {
+	assert.Equal(t, intToRoman(11), "XI")
+	assert.Equal(t, intToRoman(501), "DI")
+	assert.Equal(t, intToRoman(954), "CMLIV")
+	assert.Equal(t, intToRoman(401), "CDI")
+}
+
 func TestP344(t *testing.T) {
 	assert.Equal(t, reverseString("hello"), "olleh")
 }
@@ -92,13 +99,12 @@ func TestP557(t *testing.T) {
 
 func TestP560(t *testing.T) {
 	assert.Equal(t, subarraySum([]int{1},1), 1)
-
-	//assert.Equal(t, subarraySum([]int{-1,-1,1},0), 1)
-	//assert.Equal(t, subarraySum([]int{0,0,0,0,0,0,0,0,0,0},0), 55)
-	//assert.Equal(t, subarraySum([]int{-1,-1,1},1), 1)
-	//assert.Equal(t, subarraySum([]int{1,1,1},2), 2)
-	//assert.Equal(t, subarraySum([]int{1,2,3,2,1},3), 3)
-	//assert.Equal(t, subarraySum([]int{-1,-1,-1},-2), 2)
+	assert.Equal(t, subarraySum([]int{0,0,0,0,0,0,0,0,0,0},0), 55)
+	assert.Equal(t, subarraySum([]int{-1,-1,1},0), 1)
+	assert.Equal(t, subarraySum([]int{-1,-1,1},1), 1)
+	assert.Equal(t, subarraySum([]int{1,1,1},2), 2)
+	assert.Equal(t, subarraySum([]int{1,2,3,2,1},3), 3)
+	assert.Equal(t, subarraySum([]int{-1,-1,-1},-2), 2)
 }
 
 func TestP561(t *testing.T) {
