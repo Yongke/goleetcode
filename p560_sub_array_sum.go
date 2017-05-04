@@ -1,17 +1,38 @@
 package goleetcode
 
-// first version: o(n^2) ~~ n(n+1)/2
+import "fmt"
+
 func subarraySum(nums []int, k int) int {
 	l := len(nums)
-	match := 0
-	tmp := make([]int, l)
+	sumi := 0
+
+	tmp := make(map[int][]int)
 	for i := 0; i < l; i++ {
-		for j := 0; j <= i; j++ {
-			tmp[j] += nums[i]
-			if tmp[j] == k {
-				match++
-			}
+		sumi += nums[i]
+		tmp[sumi] = append(tmp[sumi], i)
+	}
+
+	match := 0
+	fmt.Println(tmp)
+	for s, idx := range tmp {
+		if k == s {
+			match = match + len(idx)
+		}
+		if idx1, exist := tmp[s+k]; exist {
+			match = match + compare_idx(idx, idx1)
 		}
 	}
 	return match
+}
+
+func compare_idx(idx_small []int, idx_big []int) int {
+	x := 0
+	for _, b := range idx_big {
+		for _, s := range idx_small {
+			if b > s {
+				x++
+			}
+		}
+	}
+	return x
 }
