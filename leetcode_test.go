@@ -79,6 +79,10 @@ func TestP012(t *testing.T) {
 	assert.Equal(t, intToRoman(401), "CDI")
 }
 
+func TestP013(t *testing.T) {
+	assert.Equal(t, romanToInt("CMLIV"),954)
+}
+
 func TestP344(t *testing.T) {
 	assert.Equal(t, reverseString("hello"), "olleh")
 }
