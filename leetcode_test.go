@@ -83,6 +83,13 @@ func TestP013(t *testing.T) {
 	assert.Equal(t, romanToInt("CMLIV"),954)
 }
 
+func TestP020(t *testing.T) {
+	assert.Equal(t, isValid("{"), false)
+	assert.Equal(t, isValid("]"), false)
+	assert.Equal(t, isValid("{]}"), false)
+	assert.Equal(t, isValid("({}[{()}()]){}"), true)
+}
+
 func TestP344(t *testing.T) {
 	assert.Equal(t, reverseString("hello"), "olleh")
 }
