@@ -130,3 +130,8 @@ func TestP566(t *testing.T) {
 	assert.Equal(t, matrixReshape(matrix1, 4, 2), matrix1)
 }
 
+func TestP575(t *testing.T) {
+	assert.Equal(t, distributeCandies([]int{1,1,2,2,3,3}), 3)
+	assert.Equal(t, distributeCandies([]int{1,1,2,3}), 2)
+	assert.Equal(t, distributeCandies([]int{1,1,1,1,2,2}), 2)
+}
