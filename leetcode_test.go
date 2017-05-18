@@ -2,8 +2,8 @@ package goleetcode
 
 import (
 	"github.com/magiconair/properties/assert"
-	"testing"
 	"math"
+	"testing"
 )
 
 func TestP001(t *testing.T) {
@@ -89,6 +89,11 @@ func TestP020(t *testing.T) {
 	assert.Equal(t, isValid("]"), false)
 	assert.Equal(t, isValid("{]}"), false)
 	assert.Equal(t, isValid("({}[{()}()]){}"), true)
+}
+
+func TestP339(t *testing.T) {
+	assert.Equal(t, depthSum([]interface{}{[]interface{}{1, 1}, 2, []interface{}{1, 1}}), 10)
+	assert.Equal(t, depthSum([]interface{}{1, []interface{}{4, []interface{}{6}}}), 27)
 }
 
 func TestP344(t *testing.T) {
