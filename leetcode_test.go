@@ -3,6 +3,7 @@ package goleetcode
 import (
 	"github.com/magiconair/properties/assert"
 	"testing"
+	"math"
 )
 
 func TestP001(t *testing.T) {
@@ -80,7 +81,7 @@ func TestP012(t *testing.T) {
 }
 
 func TestP013(t *testing.T) {
-	assert.Equal(t, romanToInt("CMLIV"),954)
+	assert.Equal(t, romanToInt("CMLIV"), 954)
 }
 
 func TestP020(t *testing.T) {
@@ -99,6 +100,12 @@ func TestP461(t *testing.T) {
 	assert.Equal(t, hammingDistance(0, 15), 4)
 }
 
+func TestP476(t *testing.T) {
+	assert.Equal(t, findComplement(5), 2)
+	assert.Equal(t, findComplement(1), 0)
+	assert.Equal(t, findComplement(math.MaxInt32), 0)
+}
+
 func TestP541(t *testing.T) {
 	assert.Equal(t, reverseStr("abcdefg", 2), "bacdfeg")
 	assert.Equal(t, reverseStr("abcabcab", 3), "cbaabcba")
@@ -109,19 +116,18 @@ func TestP557(t *testing.T) {
 }
 
 func TestP560(t *testing.T) {
-	assert.Equal(t, subarraySum([]int{1},1), 1)
-	assert.Equal(t, subarraySum([]int{0,0,0,0,0,0,0,0,0,0},0), 55)
-	assert.Equal(t, subarraySum([]int{-1,-1,1},0), 1)
-	assert.Equal(t, subarraySum([]int{-1,-1,1},1), 1)
-	assert.Equal(t, subarraySum([]int{1,1,1},2), 2)
-	assert.Equal(t, subarraySum([]int{1,2,3,2,1},3), 3)
-	assert.Equal(t, subarraySum([]int{-1,-1,-1},-2), 2)
+	assert.Equal(t, subarraySum([]int{1}, 1), 1)
+	assert.Equal(t, subarraySum([]int{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 0), 55)
+	assert.Equal(t, subarraySum([]int{-1, -1, 1}, 0), 1)
+	assert.Equal(t, subarraySum([]int{-1, -1, 1}, 1), 1)
+	assert.Equal(t, subarraySum([]int{1, 1, 1}, 2), 2)
+	assert.Equal(t, subarraySum([]int{1, 2, 3, 2, 1}, 3), 3)
+	assert.Equal(t, subarraySum([]int{-1, -1, -1}, -2), 2)
 }
 
 func TestP561(t *testing.T) {
 	assert.Equal(t, arrayPairSum([]int{1, 4, 3, 2}), 4)
 }
-
 
 func TestP566(t *testing.T) {
 	matrix1 := [][]int{{1, 2}, {3, 4}}
@@ -131,7 +137,7 @@ func TestP566(t *testing.T) {
 }
 
 func TestP575(t *testing.T) {
-	assert.Equal(t, distributeCandies([]int{1,1,2,2,3,3}), 3)
-	assert.Equal(t, distributeCandies([]int{1,1,2,3}), 2)
-	assert.Equal(t, distributeCandies([]int{1,1,1,1,2,2}), 2)
+	assert.Equal(t, distributeCandies([]int{1, 1, 2, 2, 3, 3}), 3)
+	assert.Equal(t, distributeCandies([]int{1, 1, 2, 3}), 2)
+	assert.Equal(t, distributeCandies([]int{1, 1, 1, 1, 2, 2}), 2)
 }
