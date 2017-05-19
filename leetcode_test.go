@@ -105,6 +105,11 @@ func TestP461(t *testing.T) {
 	assert.Equal(t, hammingDistance(0, 15), 4)
 }
 
+func TestP463(t *testing.T) {
+	assert.Equal(t, islandPerimeter([][]int{
+		{0, 1, 0, 0}, {1, 1, 1, 0}, {0, 1, 0, 0}, {1, 1, 0, 0}}), 16)
+}
+
 func TestP476(t *testing.T) {
 	assert.Equal(t, findComplement(5), 2)
 	assert.Equal(t, findComplement(1), 0)
@@ -112,8 +117,8 @@ func TestP476(t *testing.T) {
 }
 
 func TestP496(t *testing.T) {
-	assert.Equal(t, nextGreaterElement([]int{4,1,2}, []int{1,3,4,2}), []int{-1,3,-1})
-	assert.Equal(t, nextGreaterElement([]int{2,4}, []int{1,2,3,4}), []int{3,-1})
+	assert.Equal(t, nextGreaterElement([]int{4, 1, 2}, []int{1, 3, 4, 2}), []int{-1, 3, -1})
+	assert.Equal(t, nextGreaterElement([]int{2, 4}, []int{1, 2, 3, 4}), []int{3, -1})
 }
 
 func TestP500(t *testing.T) {
