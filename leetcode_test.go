@@ -111,6 +111,11 @@ func TestP476(t *testing.T) {
 	assert.Equal(t, findComplement(math.MaxInt32), 0)
 }
 
+func TestP496(t *testing.T) {
+	assert.Equal(t, nextGreaterElement([]int{4,1,2}, []int{1,3,4,2}), []int{-1,3,-1})
+	assert.Equal(t, nextGreaterElement([]int{2,4}, []int{1,2,3,4}), []int{3,-1})
+}
+
 func TestP500(t *testing.T) {
 	assert.Equal(t, findWords([]string{"Hello", "Alaska", "Dad", "Peace"}), []string{"Alaska", "Dad"})
 }
