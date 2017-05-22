@@ -116,6 +116,10 @@ func TestP476(t *testing.T) {
 	assert.Equal(t, findComplement(math.MaxInt32), 0)
 }
 
+func TestP485(t *testing.T) {
+	assert.Equal(t, findMaxConsecutiveOnes([]int{1, 1, 0, 1, 1, 1}), 3)
+}
+
 func TestP496(t *testing.T) {
 	assert.Equal(t, nextGreaterElement([]int{4, 1, 2}, []int{1, 3, 4, 2}), []int{-1, 3, -1})
 	assert.Equal(t, nextGreaterElement([]int{2, 4}, []int{1, 2, 3, 4}), []int{3, -1})
