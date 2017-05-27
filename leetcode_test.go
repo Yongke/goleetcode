@@ -51,6 +51,12 @@ func TestP003(t *testing.T) {
 	assert.Equal(t, lengthOfLongestSubstring("tmmzuxt"), 5)
 }
 
+func TestP004(t *testing.T) {
+	assert.Equal(t, findMedianSortedArrays([]int{1, 3}, []int{2}), 2.0)
+	assert.Equal(t, findMedianSortedArrays([]int{1, 2}, []int{3, 4}), 2.5)
+
+}
+
 func TestP007(t *testing.T) {
 	assert.Equal(t, reverse(123), 321)
 	assert.Equal(t, reverse(-123), -321)
@@ -89,6 +95,10 @@ func TestP020(t *testing.T) {
 	assert.Equal(t, isValid("]"), false)
 	assert.Equal(t, isValid("{]}"), false)
 	assert.Equal(t, isValid("({}[{()}()]){}"), true)
+}
+
+func TestP136(t *testing.T) {
+	assert.Equal(t, singleNumber([]int{1, 2, 3, 2, 1}), 3)
 }
 
 func TestP339(t *testing.T) {
