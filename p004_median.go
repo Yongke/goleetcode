@@ -1,42 +1,44 @@
 package goleetcode
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
-	l1 := len(nums1)
-	l2 := len(nums2)
-	odd := 1 == (l1+l2)%2
-
-	var last int
-	for i, j, k := 0, 0, 0; i < l1 || j < l2; {
-		var cur int
-		if i >= l1 && j < l2 {
-			cur = nums2[j]
-			j++
-			goto check
-		}
-
-		if j >= l2 && i < l1 {
-			cur = nums1[i]
-			i++
-			goto check
-		}
-
-		if nums1[i] < nums2[j] {
-			cur = nums1[i]
-			i++
-		} else {
-			cur = nums2[j]
-			j++
-		}
-
-	check:
-		k++
-		if k == (l1+l2)/2+1 {
-			if odd {
-				return float64(cur)
-			}
-			return (float64(cur) + float64(last)) / 2
-		}
-		last = cur
+	s1, s2 := len(nums1), len(nums2)
+	if (s1+s2)&1 == 1 {
+		return float64(findKth(nums1, nums2, (s1+s2)/2+1))
 	}
-	return 0
+	return float64(findKth(nums1, nums2, (s1+s2)/2)+findKth(nums1, nums2, (s1+s2)/2+1)) / 2
+}
+
+func findKth(nums1 []int, nums2 []int, k int) int {
+	s1, s2 := len(nums1), len(nums2)
+
+	if s1 == 0 {
+		return nums2[k-1]
+	}
+	if s2 == 0 {
+		return nums1[k-1]
+	}
+	if k == 1 {
+		return min(nums1[0], nums2[0])
+	}
+	max1, n1 := maxKth(nums1, k/2)
+	max2, n2 := maxKth(nums2, k/2)
+
+	if max1 < max2 {
+		return findKth(nums1[n1:], nums2, k-n1)
+	}
+	return findKth(nums1, nums2[n2:], k-n2)
+}
+
+func maxKth(nums []int, k int) (int, int) {
+	if k > len(nums) {
+		return nums[len(nums)-1], len(nums)
+	}
+	return nums[k-1], k
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }

@@ -52,9 +52,14 @@ func TestP003(t *testing.T) {
 }
 
 func TestP004(t *testing.T) {
+	assert.Equal(t, findKth([]int{1, 3}, []int{2}, 2), 2)
+	assert.Equal(t, findKth([]int{1, 3}, []int{2}, 3), 3)
+	assert.Equal(t, findKth([]int{1, 2}, []int{3, 4}, 3), 3)
+	assert.Equal(t, findKth([]int{1, 2}, []int{3, 4}, 4), 4)
+	assert.Equal(t, findKth([]int{1, 2, 6}, []int{2, 3, 4}, 4), 3)
 	assert.Equal(t, findMedianSortedArrays([]int{1, 3}, []int{2}), 2.0)
 	assert.Equal(t, findMedianSortedArrays([]int{1, 2}, []int{3, 4}), 2.5)
-
+	assert.Equal(t, findMedianSortedArrays([]int{1, 2, 6}, []int{2, 3, 4}), 2.5)
 }
 
 func TestP007(t *testing.T) {
